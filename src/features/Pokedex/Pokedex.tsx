@@ -1,40 +1,32 @@
-import { useCallback, useState } from 'react'
+import { useState } from 'react'
+import { usePokedexQuery } from '../../api/pokemonApi'
 import { Button } from '../../components/Button'
-import { LoadingSpinner } from '../../components/LoadingSpinner'
-import { PokedexResult } from '../../types/pokemon'
 import styles from './Pokedex.module.scss'
+import { PokemonItem } from './PokemonItem'
 
 export const Pokedex: React.FC = () => {
-    const [pokedexResult, setPokedexResult] = useState<PokedexResult>()
-    const [loading, setLoading] = useState(false)
-    const [url, setUrl] = useState<string>()
+    const [queryParams, setQueryParams] = useState('')
+    const { data } = usePokedexQuery(queryParams)
 
-    const disableLoading = useCallback(() => {
-        setTimeout(() => {
-            setLoading(false)
-        }, 200)
-    }, [setLoading])
-
-    // todo: every time the url changes (even on the first render - url is undefined there)
-    // - start loading animation
-    // - request the pokemon via { get } from api
-    // - then save the pokedexResult for the next render cycle
-    // - finally disable the loading animation
-    // - oh, did I mentioned that this should be done every time the url changes?
+    if (!data) {
+        return null
+    }
 
     return (
         <>
-            <div className={styles.pokedex}>{/* todo: lets render a <PokemonItem /> for every entry in the pokedexResult */}</div>
+            <div className={styles.pokedex}>
+                {data.pokedex?.map((pokemon) => (
+                    <PokemonItem key={pokemon.id} {...pokemon} />
+                ))}
+            </div>
             <div>
-                {/* todo: when should the button be disabled? what should happen onClick? */}
-                <Button disabled={false} onClick={() => {}}>
+                <Button disabled={!data.previous} onClick={() => setQueryParams(data.previous!)}>
                     Previous
                 </Button>
-                <Button disabled={false} onClick={() => {}}>
+                <Button disabled={!data.next} onClick={() => setQueryParams(data.next!)}>
                     Next
                 </Button>
             </div>
-            <LoadingSpinner show={loading} />
         </>
     )
 }
