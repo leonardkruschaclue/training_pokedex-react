@@ -16,6 +16,7 @@ export type PokemonResponse = {
     types: Type[]
     sprites: Sprites
     stats: Stat[]
+    abilities: Ability[]
 }
 
 type Type = {
@@ -36,4 +37,10 @@ type Stat = {
     stat: {
         name: string
     }
+}
+
+type Ability = {
+    ability: { name: string; url: string }
+    isHidden: boolean
+    slot: number
 }

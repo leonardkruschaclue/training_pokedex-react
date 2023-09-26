@@ -5,6 +5,7 @@ import { LoadingSpinner } from './components/LoadingSpinner'
 import { Header } from './features/Header'
 import { Pokedex } from './features/Pokedex'
 import { PokemonDetail } from './features/PokemonDetail/PokemonDetail'
+import { PokemonSkills } from './features/PokemonSkills/PokemonSkills'
 
 const router = createBrowserRouter(
     [
@@ -16,6 +17,10 @@ const router = createBrowserRouter(
             path: ':pokemonName',
             element: <PokemonDetail />,
         },
+        {
+            path: ':pokemonName/skills',
+            element: <PokemonSkills />
+        }
     ],
     {
         basename: '/',

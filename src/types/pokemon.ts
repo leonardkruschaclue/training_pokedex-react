@@ -12,6 +12,15 @@ export type PokemonDetail = {
     }[]
 } & Pokemon
 
+export type PokemonSkills = {
+    id: number
+    name: string
+    abilitys: {
+        name: string
+        isHidden: boolean
+    }[]
+}
+
 export type PokedexResult = {
     pokedex: Pokemon[]
     next?: string

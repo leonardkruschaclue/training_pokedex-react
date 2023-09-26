@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery, FetchBaseQueryError } from '@reduxjs/toolkit/query/react'
 import { PokemonListResponse, PokemonResponse } from '../types/api'
-import { PokedexResult, PokemonDetail } from '../types/pokemon'
+import { PokedexResult, PokemonDetail, PokemonSkills } from '../types/pokemon'
 
 const transformPokemon = (raw: PokemonResponse) => {
     const pokemon: PokemonDetail = {
@@ -14,6 +14,19 @@ const transformPokemon = (raw: PokemonResponse) => {
         imageSrc: raw.sprites.other['official-artwork'].front_default,
     }
 
+    return pokemon
+}
+
+const transformPokemonSkills = (raw: PokemonResponse) => {
+    const pokemon: PokemonSkills = {
+        id: raw.id,
+        name: raw.name,
+        abilitys: raw.abilities.map((x) => ({
+            name: x.ability.name.replace('-', ' '),
+            isHidden: x.isHidden,
+        })),
+
+        }
     return pokemon
 }
 
@@ -46,14 +59,20 @@ export const pokemonApi = createApi({
             },
                 
         }),
-        pokemon: builder.query<PokemonDetail,number | string | void>({
+        pokemon: builder.query<PokemonDetail, number | string | void>({
             query: (pokemon) => {
                 return `${pokemon}`
             },
             transformResponse: transformPokemon,
         }),
+        skills: builder.query<PokemonSkills, number | string | boolean | void>({
+            query: (pokemon) => {
+                return `${pokemon}`
+            },
+            transformResponse: transformPokemonSkills,
+        })
 
     }),
 })
 
-export const { usePokemonQuery, usePokedexQuery } = pokemonApi
+export const { usePokemonQuery, usePokedexQuery, useSkillsQuery } = pokemonApi

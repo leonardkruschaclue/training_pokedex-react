@@ -28,6 +28,9 @@ export const PokemonDetail: React.FC = () => {
                             ))}
                         </div>
                     </div>
+                    <div>
+                        <LinkButton to={`/${pokemon.name}/skills`}>Skills</LinkButton>
+                    </div>
 
                     <div className={styles.actions}>
                         <LinkButton to={`../${pokemon.id - 1}`} disabled={pokemon.id === 1}>
