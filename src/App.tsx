@@ -4,8 +4,8 @@ import { useAppSelector } from './appStore'
 import { LoadingSpinner } from './components/LoadingSpinner'
 import { Header } from './features/Header'
 import { Pokedex } from './features/Pokedex'
-import { PokemonDetail } from './features/PokemonDetail/PokemonDetail'
-import { PokemonSkills } from './features/PokemonSkills/PokemonSkills'
+import { PokemonDetail } from './features/Pokemon/PokemonDetail/PokemonDetail'
+import { PokemonSkillDisplay } from './features/Pokemon/PokemonDetail/Skills/PokemonSkillDisplay'
 
 const router = createBrowserRouter(
     [
@@ -17,10 +17,6 @@ const router = createBrowserRouter(
             path: ':pokemonName',
             element: <PokemonDetail />,
         },
-        {
-            path: ':pokemonName/skills',
-            element: <PokemonSkills />
-        }
     ],
     {
         basename: '/',

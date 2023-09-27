@@ -1,0 +1,17 @@
+@mixin typeDefault {    
+    border-radius: 4px;
+
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    margin-inline: 4px;
+    text-align: center;
+
+    text-transform: capitalize;
+}
+
+.actions {
+    display: flex;
+    gap: 0.5rem;
+
+    justify-content: center;
+}
