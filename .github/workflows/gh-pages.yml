@@ -45,6 +45,6 @@ jobs:
           path: ./dist
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: actions/deploy-pages@v2
         with:
-          folder: ./dist
+          path: ./dist
