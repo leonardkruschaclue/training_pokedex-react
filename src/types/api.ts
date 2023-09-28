@@ -25,6 +25,10 @@ export type AbilityDetailResponse = {
     flavor_text_entries: FlavorText[]
 }
 
+export type MoveDetailResponse = {
+    name: string
+}
+
 
 type Type = {
     slot: number
@@ -53,8 +57,10 @@ type Ability = {
 }
 
 type Move = {
-    name: string
-    url: string
+    move:{
+        name: string
+        url: string
+    }
 }
 
 type FlavorText = {

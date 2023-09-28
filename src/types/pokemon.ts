@@ -1,4 +1,4 @@
-export type Pokemon = {
+export type BasePokemon = {
     id: number
     name: string
     types: string[]
@@ -10,14 +10,21 @@ export type PokemonStats = {
         name: string
         value: number
     }[]
-} & Pokemon
+} & BasePokemon
 
 export type PokemonAbility = {
     abilities: {
         name: string
         isHidden: boolean
     }[]
-} & Pokemon
+} & BasePokemon
+
+export type PokemonDetails = {
+    stats: {
+        name: string
+        value: number
+    }[]
+} & BasePokemon & PokemonAbility & PokemonMove
 
 export type PokemonMove = {
     moves: {
@@ -26,7 +33,7 @@ export type PokemonMove = {
 }
 
 export type PokedexResult = {
-    pokedex: Pokemon[]
+    pokedex: BasePokemon[]
     next?: string
     previous?: string
 }
@@ -34,4 +41,9 @@ export type PokedexResult = {
 export type AbilityDetailResult = {
     name: string
     flavor: string
+}
+
+export type MoveDetailResult = {
+    name: string
+    
 }

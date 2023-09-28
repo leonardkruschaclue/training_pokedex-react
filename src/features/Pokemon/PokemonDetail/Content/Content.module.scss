@@ -1,12 +1,31 @@
-.sidebar {
-    display: grid;
-    align-content:baseline;
-    row-gap: 1rem;
+.topbar {
+    column-gap: 1rem;
     padding-top: 2.5rem;
+    padding-bottom: 1rem;
+}
+
+.scroll {
+    display: list-item;
+    max-height: 475px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.contentbox {
+    display: flex;
+    width: 940px;
+    height: 600px;
 }
 
 .content {
+    border: none;
+}
+
+.actions {
     display: flex;
+    gap: 0.5rem;
+
+    justify-content: center;
 }
 
 .linkbutton {

@@ -1,8 +1,8 @@
-import { PokemonStats } from "../../../../types/pokemon";
+import { PokemonDetails } from "../../../../../types/pokemon";
 import { Stat } from "./Stat";
 
 
-export function PokemonStatDisplay(pokemon : PokemonStats) {
+export const PokemonStatDisplay : React.FC<PokemonDetails> = (pokemon) => {
     return (
         <>
             <div>

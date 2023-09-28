@@ -1,9 +1,9 @@
 import { createApi, fetchBaseQuery, FetchBaseQueryError } from '@reduxjs/toolkit/query/react'
 import { AbilityDetailResponse, PokemonListResponse, PokemonResponse } from '../types/api'
-import { PokedexResult, PokemonStats, PokemonAbility, AbilityDetailResult, PokemonMove } from '../types/pokemon'
+import { PokedexResult, PokemonStats, PokemonAbility, AbilityDetailResult, PokemonMove, PokemonDetails } from '../types/pokemon'
 
 const transformPokemon = (raw: PokemonResponse) => {
-    const pokemon: PokemonStats = {
+    const pokemon: PokemonDetails = {
         id: raw.id,
         name: raw.name,
         types: raw.types.map((x) => x.type.name),
@@ -11,26 +11,19 @@ const transformPokemon = (raw: PokemonResponse) => {
             name: x.stat.name.replace('-', ' '),
             value: x.base_stat,
         })),
+        abilities: raw.abilities.map((x) => ({
+            name: x.ability.name.replace('-', ' '),
+            isHidden: x.is_hidden,
+        })),
+        moves: raw.moves.map((x) => ({
+            name: x.move.name.replace('-', ' ')
+        })),
         imageSrc: raw.sprites.other['official-artwork'].front_default,
     }
 
     return pokemon
 }
 
-const transformPokemonSkills = (raw: PokemonResponse) => {
-    const pokemon: PokemonAbility = {
-        id: raw.id,
-        name: raw.name,
-        types: raw.types.map((x) => x.type.name),
-        imageSrc: raw.sprites.other['official-artwork'].front_default,
-        abilities: raw.abilities.map((x) => ({
-            name: x.ability.name.replace('-', ' '),
-            isHidden: x.is_hidden,
-        })),
-
-        }
-    return pokemon
-}
 
 const transformAbility = (raw: AbilityDetailResponse) => {
     const ability: AbilityDetailResult = {
@@ -43,7 +36,7 @@ const transformAbility = (raw: AbilityDetailResponse) => {
 const transformMove = (raw: PokemonResponse) => {
     const move: PokemonMove = {
         moves: raw.moves.map((x) => ({
-            name: x.name
+            name: x.move.name
         }))
         }
     return move
@@ -78,17 +71,11 @@ export const pokemonApi = createApi({
             },
                 
         }),
-        pokemon: builder.query<PokemonStats, number | string | void>({
+        pokemon: builder.query<PokemonDetails, number | string | void>({
             query: (pokemon) => {
                 return `pokemon/${pokemon}`
             },
             transformResponse: transformPokemon,
-        }),
-        baseAbility: builder.query<PokemonAbility, number | string | boolean | void>({
-            query: (pokemon) => {
-                return `pokemon/${pokemon}`
-            },
-            transformResponse: transformPokemonSkills,
         }),
         abilityInformation: builder.query<AbilityDetailResult, number | string | boolean | void>({
             query: (ability) => {
@@ -100,4 +87,4 @@ export const pokemonApi = createApi({
     }),
 })
 
-export const { usePokemonQuery, usePokedexQuery, useBaseAbilityQuery, useAbilityInformationQuery } = pokemonApi
+export const { usePokemonQuery, usePokedexQuery, useAbilityInformationQuery } = pokemonApi
