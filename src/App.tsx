@@ -4,7 +4,8 @@ import { useAppSelector } from './appStore'
 import { LoadingSpinner } from './components/LoadingSpinner'
 import { Header } from './features/Header'
 import { Pokedex } from './features/Pokedex'
-import { PokemonDetail } from './features/PokemonDetail/PokemonDetail'
+import { PokemonDetail } from './features/Pokemon/PokemonDetail/PokemonDetail'
+import { PokemonSkillDisplay } from './features/Pokemon/PokemonDetail/Content/AbilityDisplay/PokemonAbilityDisplay'
 
 const router = createBrowserRouter(
     [

@@ -1,13 +1,7 @@
-.header {
-    text-transform: capitalize;
-}
-
-.content {
-    display: flex;
-}
-
 .actions {
     display: flex;
+    margin-top: auto;
+    margin-bottom: 0;
     gap: 0.5rem;
 
     justify-content: center;
