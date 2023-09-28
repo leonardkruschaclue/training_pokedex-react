@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useState } from 'react'
-import { PokemonDetail } from '../types/pokemon'
+import { PokemonStats } from '../types/pokemon'
 import { get } from './pokemonDetailApi'
 
 export const usePokemonDetailApi = (pokemonName?: string) => {
-    const [pokemon, setPokemon] = useState<PokemonDetail>()
+    const [pokemon, setPokemon] = useState<PokemonStats>()
     const [loading, setLoading] = useState(false)
 
     const disableLoading = useCallback(() => {

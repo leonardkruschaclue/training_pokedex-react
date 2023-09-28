@@ -1,14 +1,14 @@
 import { PokemonResponse } from '../types/api'
-import { PokemonDetail } from '../types/pokemon'
+import { PokemonStats } from '../types/pokemon'
 
 const baseUrl = 'https://pokeapi.co/api/v2/pokemon/'
 
-export const get = async (name: string): Promise<PokemonDetail> => {
+export const get = async (name: string): Promise<PokemonStats> => {
     const pokemonUrl = `${baseUrl}${name}`
     const data = await fetch(pokemonUrl)
     const rawPokemon: PokemonResponse = await data.json()
 
-    const pokemon: PokemonDetail = {
+    const pokemon: PokemonStats = {
         id: rawPokemon.id,
         name: rawPokemon.name,
         types: rawPokemon.types.map((x) => x.type.name),

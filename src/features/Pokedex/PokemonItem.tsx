@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
-import { Pokemon } from '../../types/pokemon'
+import { BasePokemon } from '../../types/pokemon'
 import styles from './PokemonItem.module.scss'
 
 // todo: how do you get the props?
-export const PokemonItem: React.FC<Pokemon> = ({id, imageSrc, name, types}) => {
+export const PokemonItem: React.FC<BasePokemon> = ({id, imageSrc, name, types}) => {
     return (
         <Link to={name} className={styles.card}>
             <div className={styles.item}>
