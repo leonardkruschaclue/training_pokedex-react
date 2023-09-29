@@ -27,6 +27,11 @@ export type AbilityDetailResponse = {
 
 export type MoveDetailResponse = {
     name: string
+    accuracy: number
+    power: number
+    pp: number
+    effect_entries?: Effect[]
+    flavor_text_entries: FlavorText[]
 }
 
 
@@ -65,4 +70,9 @@ type Move = {
 
 type FlavorText = {
     flavor_text: string
+}
+
+type Effect = {
+    effect: string
+    short_effect: string
 }

@@ -1,5 +1,5 @@
 
-import {  PokemonDetails } from "../../../../../types/pokemon"
+import {  PokemonDetails } from "../../../types/pokemon"
 import { PokemonType } from "./PokemonType"
 import styles from './PokemonHeader.module.scss'
 

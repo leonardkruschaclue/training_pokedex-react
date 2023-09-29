@@ -4,7 +4,7 @@ import { PokemonDetails } from "../../../../types/pokemon";
 import { PokemonStatDisplay } from "./StatDisplay/PokemonStatDisplay";
 import { PokemonAbilityDisplay } from "./AbilityDisplay/PokemonAbilityDisplay";
 import { PokemonMoveDisplay } from "./MoveDisplay/PokemonMoveDisplay";
-import { PokemonHeader } from "./PokemonHeader/PokemonHeader";
+import { PokemonHeader } from "../../PokemonHeader/PokemonHeader";
 import styles from "./Content.module.scss"
 
 export function Content (pokemon : PokemonDetails) {

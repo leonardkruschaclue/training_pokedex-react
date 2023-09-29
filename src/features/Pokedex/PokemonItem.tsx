@@ -4,7 +4,7 @@ import styles from './PokemonItem.module.scss'
 
 export const PokemonItem: React.FC<BasePokemon> = ({id, imageSrc, name, types}) => {
     return (
-        <Link to={name} className={styles.card}>
+        <Link to={`pokemon/${name}`} className={styles.card}>
             <div className={styles.item}>
                 <div className={styles.id}>#{id}</div>
                 <div className="image"><img src={imageSrc} /></div>
