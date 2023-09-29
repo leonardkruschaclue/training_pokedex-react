@@ -11,7 +11,7 @@ export const PokemonDetail: React.FC = () => {
     return (
         <>
             {pokemon && (
-                <div style={{ textAlign: 'left' }}>
+                <div className={styles.mainbox}>
                     <Content {...pokemon} />
                     <NavigationButtons {...pokemon} />
                 </div>
