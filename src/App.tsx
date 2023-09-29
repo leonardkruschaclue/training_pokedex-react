@@ -1,10 +1,10 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import styles from './App.module.scss'
 import { useAppSelector } from './appStore'
 import { LoadingSpinner } from './components/LoadingSpinner'
 import { Header } from './features/Header'
 import { Pokedex } from './features/Pokedex'
 import { PokemonDetail } from './features/Pokemon/PokemonDetail/PokemonDetail'
+import styles from './App.module.scss'
 
 const router = createBrowserRouter(
     [

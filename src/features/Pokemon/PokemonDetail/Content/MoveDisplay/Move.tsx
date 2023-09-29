@@ -15,7 +15,6 @@ export const Move: React.FC<PokemonDetails['moves'][0]> = (move) => {
                     </p> 
                     <p>
                         {/*moveDetails.flavor*/}
-                        <LinkButton to={`/move/${move.name}`}> More Information</LinkButton>
                     </p>
                 </div>
             </div>
