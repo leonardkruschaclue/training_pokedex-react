@@ -45,5 +45,10 @@ export type AbilityDetailResult = {
 
 export type MoveDetailResult = {
     name: string
-    
+    accuracy: number
+    power: number
+    pp: number
+    effect_text?: string
+    effect_text_short?: string
+    flavor: string
 }

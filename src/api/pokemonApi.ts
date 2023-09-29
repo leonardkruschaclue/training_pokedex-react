@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery, FetchBaseQueryError } from '@reduxjs/toolkit/query/react'
-import { AbilityDetailResponse, PokemonListResponse, PokemonResponse } from '../types/api'
-import { PokedexResult, PokemonStats, PokemonAbility, AbilityDetailResult, PokemonMove, PokemonDetails } from '../types/pokemon'
+import { AbilityDetailResponse, MoveDetailResponse, PokemonListResponse, PokemonResponse } from '../types/api'
+import { PokedexResult, PokemonStats, PokemonAbility, AbilityDetailResult, PokemonMove, PokemonDetails, MoveDetailResult } from '../types/pokemon'
 
 const transformPokemon = (raw: PokemonResponse) => {
     const pokemon: PokemonDetails = {
@@ -33,11 +33,15 @@ const transformAbility = (raw: AbilityDetailResponse) => {
     return ability
 }
 
-const transformMove = (raw: PokemonResponse) => {
-    const move: PokemonMove = {
-        moves: raw.moves.map((x) => ({
-            name: x.move.name
-        }))
+const transformMove = (raw: MoveDetailResponse) => {
+    const move: MoveDetailResult = {
+        name: raw.name,
+        accuracy: raw.accuracy,
+        power: raw.power,
+        pp: raw.pp,
+        effect_text: raw.effect_entries![0].effect,
+        effect_text_short: raw.effect_entries![0].short_effect,
+        flavor: raw.flavor_text_entries[0].flavor_text
         }
     return move
 }
@@ -82,9 +86,15 @@ export const pokemonApi = createApi({
                 return `ability/${ability}`
             },
             transformResponse: transformAbility,
+        }),
+        moveInformation: builder.query<MoveDetailResult, number | string | boolean | void>({
+            query: (move) => {
+                return `move/${move}`
+            },
+            transformResponse: transformMove,
         })
 
     }),
 })
 
-export const { usePokemonQuery, usePokedexQuery, useAbilityInformationQuery } = pokemonApi
+export const { usePokemonQuery, usePokedexQuery, useAbilityInformationQuery, useMoveInformationQuery } = pokemonApi
