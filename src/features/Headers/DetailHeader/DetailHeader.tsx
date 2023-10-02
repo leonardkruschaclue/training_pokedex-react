@@ -1,7 +1,6 @@
 
-import {  MoveDetailResult, PokemonDetails } from "../../../api/types/pokemon"
 import { Type } from "./Type"
-import styles from './DetailHeader.module.scss'
+import styles from "../Header.module.scss"
 
 export const DetailHeader : React.FC<{name :string, types: string[]}> = ({name, types}) => {
     return (

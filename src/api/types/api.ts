@@ -30,8 +30,9 @@ export type MoveDetailResponse = {
     accuracy: number
     power: number
     pp: number
+    effect_chance: number | null
     effect_entries?: Effect[]
-    flavor_text_entries: FlavorText[]
+    flavor_text_entries?: FlavorText[]
     type: SingleType
 }
 
@@ -76,9 +77,16 @@ type Move = {
 
 type FlavorText = {
     flavor_text: string
+    language: Language
 }
 
 type Effect = {
     effect: string
     short_effect: string
+    language: Language
+}
+
+type Language = {
+        "name": string
+        "url": string
 }

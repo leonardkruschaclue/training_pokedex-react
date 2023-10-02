@@ -39,9 +39,10 @@ const transformMove = (raw: MoveDetailResponse) => {
         accuracy: raw.accuracy,
         power: raw.power,
         pp: raw.pp,
-        effect_text: raw.effect_entries![0].effect,
-        effect_text_short: raw.effect_entries![0].short_effect,
-        flavor: raw.flavor_text_entries[0].flavor_text,
+        effect_text: raw.effect_entries?.filter((x) => x.language.name === "en").at(0)?.effect ?? "",
+        effect_text_short: raw.effect_entries?.filter((x) => x.language.name === "en").at(0)?.short_effect ?? "",
+        effect_chance: raw.effect_chance ?? 100,
+        flavor: raw.flavor_text_entries?.filter((x) => x.language.name === "en").at(0)?.flavor_text ?? "",
         types: [raw.type.name],
         }
     return move

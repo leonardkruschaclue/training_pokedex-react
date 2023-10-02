@@ -1,9 +1,9 @@
 import { useParams } from "react-router"
 import { useMoveInformationQuery } from "../../api/pokemonApi"
-import { DetailHeader } from "../Headers/ContentHeader/DetailHeader"
+import { DetailHeader } from "../Headers/DetailHeader/DetailHeader"
 import { MoveContent } from "./Content/MoveContent"
 
-import styles from "../../Style/Content.module.scss"
+import styles from "../../Style/DetailPage.module.scss"
 
 
 export const MoveDetail: React.FC = () => {
