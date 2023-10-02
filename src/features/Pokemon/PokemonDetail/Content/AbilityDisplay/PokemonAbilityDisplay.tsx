@@ -1,5 +1,5 @@
 import { Skill } from './Skill'
-import { PokemonDetails } from '../../../../../types/pokemon'
+import { PokemonDetails } from '../../../../../api/types/pokemon'
 
 import styles from "../Content.module.scss"
 

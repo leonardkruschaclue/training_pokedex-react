@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
-import { PokemonStats } from '../types/pokemon'
+import { PokemonStats } from '../api/types/pokemon'
 import { get } from './pokemonDetailApi'
 
 export const usePokemonDetailApi = (pokemonName?: string) => {

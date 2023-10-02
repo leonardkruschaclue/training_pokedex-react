@@ -51,4 +51,5 @@ export type MoveDetailResult = {
     effect_text?: string
     effect_text_short?: string
     flavor: string
+    types: string[]
 }

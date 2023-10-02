@@ -1,7 +1,6 @@
-import styles from "./MoveItem.module.scss"
+import styles from "../../Style/AnimatedBars.module.scss"
 
-export const MoveItem: React.FC<{name : string, value: number, maxValue: number}> = ({name, value , maxValue}) => {
-    const percentageValue = Math.min(Math.round((value / maxValue) * 100), 100)
+export const Stat: React.FC<{name : string, value : number, percentageValue : number}> = ({name, value, percentageValue}) => {
     return (
         <div className={styles.wrapper}>
             <div className={styles.name}>

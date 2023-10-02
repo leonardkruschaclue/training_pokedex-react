@@ -13,7 +13,7 @@ export type PokemonListResponse = {
 export type PokemonResponse = {
     id: number
     name: string
-    types: Type[]
+    types: MultipleType[]
     sprites: Sprites
     stats: Stat[]
     abilities: Ability[]
@@ -32,12 +32,18 @@ export type MoveDetailResponse = {
     pp: number
     effect_entries?: Effect[]
     flavor_text_entries: FlavorText[]
+    type: SingleType
 }
 
 
-type Type = {
+type MultipleType = {
     slot: number
-    type: { name: string; url: string }
+    type: SingleType
+}
+
+type SingleType = {
+    name: string 
+    url: string
 }
 
 type Sprites = {
