@@ -48,8 +48,9 @@ export type MoveDetailResult = {
     accuracy: number
     power: number
     pp: number
-    effect_text?: string
-    effect_text_short?: string
+    effect_text: string
+    effect_text_short: string
+    effect_chance: number
     flavor: string
     types: string[]
 }

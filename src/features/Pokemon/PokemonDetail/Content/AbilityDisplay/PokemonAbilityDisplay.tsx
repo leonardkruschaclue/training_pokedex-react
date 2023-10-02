@@ -1,4 +1,4 @@
-import { Skill } from './Skill'
+import { Ability } from './Ability'
 import { PokemonDetails } from '../../../../../api/types/pokemon'
 
 import styles from "../Content.module.scss"
@@ -8,8 +8,8 @@ export const PokemonAbilityDisplay: React.FC<PokemonDetails> = (pokemon) => {
         <>
             {pokemon &&(
                 <div>
-                    {pokemon.abilities.map((skill) => (
-                        <Skill key={`${pokemon.name}-${skill.name}`} {...skill} />
+                    {pokemon.abilities.map((ability) => (
+                        <Ability key={`${pokemon.name}-${ability.name}`} {...ability} />
                     ))}
                 </div>
             )}

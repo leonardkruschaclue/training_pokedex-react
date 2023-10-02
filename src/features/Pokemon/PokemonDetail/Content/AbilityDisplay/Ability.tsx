@@ -1,11 +1,12 @@
-import styles from './Skill.module.scss'
+import styles from './Ability.module.scss'
 
-import { PokemonAbility, PokemonDetails } from '../../../../../api/types/pokemon'
+import { PokemonDetails } from '../../../../../api/types/pokemon'
 import { useAbilityInformationQuery } from '../../../../../api/pokemonApi'
 import { LinkButton } from '../../../../../components/LinkButton'
+import { toQuery } from '../../../../../Utility/Converters'
 
-export const Skill: React.FC<PokemonDetails['abilities'][0]> = (ability) => {
-    const {data: abilityDetails} = useAbilityInformationQuery(ability.name.replace(' ','-'))
+export const Ability: React.FC<PokemonDetails['abilities'][0]> = (ability) => {
+    const {data: abilityDetails} = useAbilityInformationQuery(toQuery(ability.name))
     return (
         <>
         {abilityDetails && (
@@ -16,7 +17,7 @@ export const Skill: React.FC<PokemonDetails['abilities'][0]> = (ability) => {
                     </p> 
                     <p>
                         {abilityDetails.flavor}
-                        <LinkButton to={`/ability/${ability.name}`}> More Information</LinkButton>
+                        <LinkButton to={`/ability/${toQuery(ability.name)}`}> More Information</LinkButton>
                     </p>
                 </div>
             </div>

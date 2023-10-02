@@ -1,6 +1,6 @@
 import styles from "../../Style/AnimatedBars.module.scss"
 
-export const Stat: React.FC<{name : string, value : number, percentageValue : number}> = ({name, value, percentageValue}) => {
+export const StatBar: React.FC<{name : string, value : number, percentageValue : number}> = ({name, value, percentageValue}) => {
     return (
         <div className={styles.wrapper}>
             <div className={styles.name}>

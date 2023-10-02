@@ -12,12 +12,19 @@
     max-height: 475px;
     overflow-y: scroll;
     overflow-x: hidden;
+    p {
+        width: 400px;
+    }
 }
 
 .contentbox {
     display: flex;
     width: 940px;
     height: 600px;
+    img {
+        width: 475px;
+        height: 475px;
+    }
 }
 
 .content {
@@ -25,9 +32,12 @@
 }
 
 .centercontent {
-    display: grid;
-    border: none;
-    justify-content: center;
+    border-right: 1px solid var(--secondary-background);
+    justify-items: center;
+    text-align: center;
+    p {
+        width: 400px;
+    }
 }
 
 .actions {
