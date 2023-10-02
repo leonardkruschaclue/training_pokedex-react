@@ -1,5 +1,5 @@
-import { PokemonDetails } from "../../../../types/pokemon";
-import { LinkButton } from "../../../../components/LinkButton";
+import { PokemonDetails } from "../../../api/types/pokemon";
+import { LinkButton } from "../../../components/LinkButton";
 
 import styles from "./NavigationButtons.module.scss"
 

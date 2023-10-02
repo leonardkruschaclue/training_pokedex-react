@@ -1,6 +1,6 @@
 import styles from './Skill.module.scss'
 
-import { PokemonAbility, PokemonDetails } from '../../../../../types/pokemon'
+import { PokemonAbility, PokemonDetails } from '../../../../../api/types/pokemon'
 import { useAbilityInformationQuery } from '../../../../../api/pokemonApi'
 import { LinkButton } from '../../../../../components/LinkButton'
 

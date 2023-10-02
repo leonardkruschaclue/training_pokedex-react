@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery, FetchBaseQueryError } from '@reduxjs/toolkit/query/react'
-import { AbilityDetailResponse, MoveDetailResponse, PokemonListResponse, PokemonResponse } from '../types/api'
-import { PokedexResult, PokemonStats, PokemonAbility, AbilityDetailResult, PokemonMove, PokemonDetails, MoveDetailResult } from '../types/pokemon'
+import { AbilityDetailResponse, MoveDetailResponse, PokemonListResponse, PokemonResponse } from './types/api'
+import { PokedexResult, PokemonStats, PokemonAbility, AbilityDetailResult, PokemonMove, PokemonDetails, MoveDetailResult } from './types/pokemon'
 
 const transformPokemon = (raw: PokemonResponse) => {
     const pokemon: PokemonDetails = {
@@ -41,7 +41,8 @@ const transformMove = (raw: MoveDetailResponse) => {
         pp: raw.pp,
         effect_text: raw.effect_entries![0].effect,
         effect_text_short: raw.effect_entries![0].short_effect,
-        flavor: raw.flavor_text_entries[0].flavor_text
+        flavor: raw.flavor_text_entries[0].flavor_text,
+        types: [raw.type.name],
         }
     return move
 }

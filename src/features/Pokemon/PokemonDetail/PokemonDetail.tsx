@@ -1,8 +1,9 @@
 import { useParams } from 'react-router-dom'
 import { usePokemonQuery } from '../../../api/pokemonApi'
-import { Content } from './Content/Content'
-import { NavigationButtons } from './NavigationButtons/NavigationButtons'
-import styles from './PokemonDetail.module.scss'
+import { PokemonContent } from './Content/PokemonContent'
+import { NavigationButtons } from '../NavigationButtons/NavigationButtons'
+
+import styles from '../../../Style/DetailPage.module.scss'
 
 export const PokemonDetail: React.FC = () => {
     const { pokemonName } = useParams()
@@ -12,7 +13,7 @@ export const PokemonDetail: React.FC = () => {
         <>
             {pokemon && (
                 <div className={styles.mainbox}>
-                    <Content {...pokemon} />
+                    <PokemonContent {...pokemon} />
                     <NavigationButtons {...pokemon} />
                 </div>
             )}

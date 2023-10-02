@@ -1,6 +1,6 @@
 import styles from './Move.module.scss'
 
-import { PokemonDetails } from '../../../../../types/pokemon'
+import { PokemonDetails } from '../../../../../api/types/pokemon'
 import { Link } from 'react-router-dom'
 import { useMoveInformationQuery } from '../../../../../api/pokemonApi'
 import { LinkButton } from '../../../../../components/LinkButton'
