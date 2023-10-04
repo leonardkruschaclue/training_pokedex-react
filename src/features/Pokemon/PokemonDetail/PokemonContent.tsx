@@ -1,12 +1,10 @@
-import { useState } from "react";
-import { Button } from "../../../../components/Button";
-import { PokemonDetails } from "../../../../api/types/pokemon";
+import { PokemonDetails } from "../../../api/types/pokemon";
 import { PokemonStatDisplay } from "./StatDisplay/PokemonStatDisplay";
 import { PokemonAbilityDisplay } from "./AbilityDisplay/PokemonAbilityDisplay";
 import { PokemonMoveDisplay } from "./MoveDisplay/PokemonMoveDisplay";
-import { DetailHeader } from "../../../Headers/DetailHeader/DetailHeader";
-import styles from "../../../../Style/Content.module.scss"
-import { MultiPageContent } from "../../../../components/MultiPageContent/MultiPageContent";
+import { DetailHeader } from "../../Headers/DetailHeader/DetailHeader";
+import { MultiPageContent } from "../../../components/MultiPageContent/MultiPageContent";
+import styles from "../../../Style/Content.module.scss"
 
 export function PokemonContent (pokemon : PokemonDetails) {
     const pages = new Array<React.FC<any>>();

@@ -1,4 +1,4 @@
-import { PokemonDetails } from "../../../../../api/types/pokemon";
+import { PokemonDetails } from "../../../../api/types/pokemon";
 import { PokemonStat} from "./PokemonStat";
 
 
