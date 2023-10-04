@@ -16,3 +16,5 @@ export const PokemonMoveDisplay : React.FC<PokemonDetails> = (pokemon) => {
         </>
     );
 }
+//Name for the Button
+PokemonMoveDisplay.displayName = "Moves";

@@ -1,4 +1,4 @@
-import styles from './Move.module.scss'
+import styles from '../../../../../Style/Display.module.scss'
 
 import { PokemonDetails } from '../../../../../api/types/pokemon'
 import { LinkButton } from '../../../../../components/LinkButton'

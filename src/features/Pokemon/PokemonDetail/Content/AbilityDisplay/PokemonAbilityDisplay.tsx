@@ -1,7 +1,6 @@
 import { Ability } from './Ability'
 import { PokemonDetails } from '../../../../../api/types/pokemon'
 
-import styles from "../Content.module.scss"
 
 export const PokemonAbilityDisplay: React.FC<PokemonDetails> = (pokemon) => {
     return (
@@ -16,3 +15,5 @@ export const PokemonAbilityDisplay: React.FC<PokemonDetails> = (pokemon) => {
         </>
     )
 }
+//Name for the Button
+PokemonAbilityDisplay.displayName = "Abilitys";

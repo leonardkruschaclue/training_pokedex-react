@@ -6,9 +6,13 @@ import { PokemonAbilityDisplay } from "./AbilityDisplay/PokemonAbilityDisplay";
 import { PokemonMoveDisplay } from "./MoveDisplay/PokemonMoveDisplay";
 import { DetailHeader } from "../../../Headers/DetailHeader/DetailHeader";
 import styles from "../../../../Style/Content.module.scss"
+import { MultiPageContent } from "../../../../components/MultiPageContent/MultiPageContent";
 
 export function PokemonContent (pokemon : PokemonDetails) {
-    const [page , setPage] = useState<number>(0)
+    const pages = new Array<React.FC<any>>();
+    pages[0] = PokemonStatDisplay;
+    pages[1] = PokemonAbilityDisplay;
+    pages[2] = PokemonMoveDisplay;
     return (
         <>
             <div className={styles.contentbox}>
@@ -16,21 +20,8 @@ export function PokemonContent (pokemon : PokemonDetails) {
                     <DetailHeader {...pokemon} />
                     <img src={pokemon.imageSrc} alt={`Displays a picture of ${pokemon.name}`} />
                 </div>
-                <div className={styles.content}>
-                    <div className={styles.topbar}>
-                        <Button onClick={() => setPage(0)} disabled={(page===0)}>
-                            Stats
-                        </Button>
-                        <Button onClick={() => setPage(1)} disabled={(page===1)}>
-                            Abilities
-                        </Button>
-                        <Button onClick={() => setPage(2)} disabled={(page===2)}>
-                            Moves
-                        </Button>
-                    </div>
-                    {(page===0) && <PokemonStatDisplay {...pokemon}/>}
-                    {(page===1) && <PokemonAbilityDisplay {...pokemon} />}
-                    {(page===2) && <PokemonMoveDisplay {...pokemon} />}
+                <div className={styles.colum}>
+                    <MultiPageContent arg={pokemon} pages={pages} />
                 </div>
             </div>
         </>

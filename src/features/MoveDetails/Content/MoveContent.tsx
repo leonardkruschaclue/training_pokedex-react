@@ -1,16 +1,17 @@
 import { MoveDetailResult } from "../../../api/types/pokemon"
 import { DetailHeader } from "../../Headers/DetailHeader/DetailHeader"
-import { MoveStat } from "./MoveStat"
 import { formateEffectChanceString } from "../../../Utility/Converters"
+import { GeneralHeader } from "../../Headers/GeneralHeader/GeneralHeader"
+import { StatBar } from "../../../components/StatBar/StatBar"
 
 import styles from "../../../Style/Content.module.scss"
-import { GeneralHeader } from "../../Headers/GeneralHeader/GeneralHeader"
+import { MultiPageContent } from "../../../components/MultiPageContent/MultiPageContent"
 
 
 export const MoveContent: React.FC<MoveDetailResult> = (move) => {
     return (
         <div className={styles.contentbox}>
-                <div className={styles.centercontent}>
+                <div className={styles.centercoulum}>
                     <DetailHeader {...move} />
                     <p>
                         {move.flavor}
@@ -18,19 +19,26 @@ export const MoveContent: React.FC<MoveDetailResult> = (move) => {
                     <p>
                         Effect: {formateEffectChanceString(move.effect_text_short, move.effect_chance)}
                     </p>
-                    <MoveStat name="Accuracy" value={move.accuracy} maxValue={100} />
-                    <MoveStat name="Power" value={move.power} maxValue={250} />
-                    <MoveStat name="PP" value={move.pp} maxValue={64} />
+                    <StatBar name="Accuracy" value={move.accuracy} maxValue={100} defaultValue={100} />
+                    <StatBar name="Power" value={move.power} maxValue={250} defaultValue={0} />
+                    <StatBar name="PP" value={move.pp} maxValue={64} defaultValue={0} />
                 </div>
-                <div className={styles.centercontent}>
-                    <GeneralHeader title="Full Effect" subtitle="" />
-                    <div style={{height: 26.4}} />
-                    <div className={styles.scroll}>
-                        <p>
-                            {formateEffectChanceString(move.effect_text, move.effect_chance)}
-                        </p>
-                    </div>
+                <div className={styles.centercoulum}>
+                    <MultiPageContent arg={move} pages={[MoveDetailDisplay]} / >
                 </div>
             </div>
     );
 }
+
+const MoveDetailDisplay : React.FC<MoveDetailResult> = (move) => {
+    return (
+        <>
+            <div className={styles.scroll}>
+                <p>
+                    {formateEffectChanceString(move.effect_text, move.effect_chance)}
+                </p>
+            </div>
+        </>
+    );
+}
+MoveDetailDisplay.displayName = "Full Effect"

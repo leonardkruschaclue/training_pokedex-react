@@ -1,4 +1,4 @@
-import styles from './Ability.module.scss'
+import styles from '../../../../../Style/Display.module.scss'
 
 import { PokemonDetails } from '../../../../../api/types/pokemon'
 import { useAbilityInformationQuery } from '../../../../../api/pokemonApi'
@@ -12,13 +12,13 @@ export const Ability: React.FC<PokemonDetails['abilities'][0]> = (ability) => {
         {abilityDetails && (
             <div className={styles.wrapper}>
                 <div className={styles.name}>
-                    <p>
-                        {ability.name}
-                    </p> 
+                    {ability.name} 
                     <p>
                         {abilityDetails.flavor}
-                        <LinkButton to={`/ability/${toQuery(ability.name)}`}> More Information</LinkButton>
                     </p>
+                </div>
+                <div>
+                    <LinkButton to={`/ability/${toQuery(ability.name)}`}>Details</LinkButton>
                 </div>
             </div>
         )}

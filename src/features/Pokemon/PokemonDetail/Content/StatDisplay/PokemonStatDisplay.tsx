@@ -14,3 +14,5 @@ export const PokemonStatDisplay : React.FC<PokemonDetails> = (pokemon) => {
         </>
     );
 }
+//Name for the Button
+PokemonStatDisplay.displayName = "Stats";

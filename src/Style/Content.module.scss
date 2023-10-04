@@ -1,21 +1,27 @@
 .topbar {
     column-gap: 1rem;
-    padding-top: 2.5rem;
+    margin-top: 2.5rem;
     padding-bottom: 1rem;
     Button {
         border: none;
+        &:disabled {
+            opacity: 1;
+            cursor: not-allowed;
+            background-color: var(--secondary-background);
+        }
     }
 }
 
 .scroll {
     display: list-item;
     max-height: 475px;
-    overflow-y: scroll;
     overflow-x: hidden;
+    padding-right: 10px;
 }
 
 .contentbox {
     display: flex;
+    justify-content: center;
     width: 940px;
     height: 600px;
     img {
@@ -24,12 +30,14 @@
     }
 }
 
-.content {
-    border: none;
+.colum {
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
-.centercontent {
-    border-right: 1px solid var(--secondary-background);
+.centercoulum {
+    padding-left: 10px;
+    padding-right: 10px;
     justify-items: center;
     text-align: center;
     p {
