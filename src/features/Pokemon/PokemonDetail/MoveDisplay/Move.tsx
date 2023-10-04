@@ -1,9 +1,9 @@
-import styles from './Move.module.scss'
+import styles from "../../../../Style/Display.module.scss"
 
-import { PokemonDetails } from '../../../../../api/types/pokemon'
-import { LinkButton } from '../../../../../components/LinkButton'
-import { useMoveInformationQuery } from '../../../../../api/pokemonApi'
-import { formateEffectChanceString, toQuery } from '../../../../../Utility/Converters'
+import { PokemonDetails } from '../../../../api/types/pokemon'
+import { LinkButton } from '../../../../components/LinkButton'
+import { useMoveInformationQuery } from '../../../../api/pokemonApi'
+import { formateEffectChanceString, toQuery } from '../../../../Utility/Converters'
 
 export const Move: React.FC<PokemonDetails['moves'][0]> = (move) => {
     const {data: moveDetails} = useMoveInformationQuery(toQuery(move.name))

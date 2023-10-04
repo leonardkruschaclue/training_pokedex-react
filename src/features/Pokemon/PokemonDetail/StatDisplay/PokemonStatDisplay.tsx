@@ -1,4 +1,4 @@
-import { PokemonDetails } from "../../../../../api/types/pokemon";
+import { PokemonDetails } from "../../../../api/types/pokemon";
 import { PokemonStat} from "./PokemonStat";
 
 
@@ -14,3 +14,5 @@ export const PokemonStatDisplay : React.FC<PokemonDetails> = (pokemon) => {
         </>
     );
 }
+//Name for the Button
+PokemonStatDisplay.displayName = "Stats";
