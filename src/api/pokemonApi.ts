@@ -1,6 +1,7 @@
 import { createApi, fetchBaseQuery, FetchBaseQueryError } from '@reduxjs/toolkit/query/react'
 import { AbilityDetailResponse, MoveDetailResponse, PokemonListResponse, PokemonResponse } from './types/api'
 import { PokedexResult, PokemonStats, PokemonAbility, AbilityDetailResult, PokemonMove, PokemonDetails, MoveDetailResult } from './types/pokemon'
+import { QUERYBASEURL } from '../Constants'
 
 const transformPokemon = (raw: PokemonResponse) => {
     const pokemon: PokemonDetails = {
@@ -51,7 +52,7 @@ const transformMove = (raw: MoveDetailResponse) => {
 const splitQuery = (url?: string) => `?${url?.split('?')?.[1] ?? ''}`
 
 export const pokemonApi = createApi({
-    baseQuery: fetchBaseQuery({ baseUrl: 'https://pokeapi.co/api/v2/' }),
+    baseQuery: fetchBaseQuery({ baseUrl: QUERYBASEURL }),
     endpoints: (builder) => ({
         pokedex: builder.query<PokedexResult, string>({
             async queryFn(arg, _queryApi, _extraOptions, fetchWithBQ) {
