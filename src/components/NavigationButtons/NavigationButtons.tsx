@@ -4,7 +4,7 @@ import { LinkButton } from "../LinkButton";
 import styles from "./NavigationButtons.module.scss"
 
 
-export const NavigationButtons : React.FC<PokemonDetails> = (pokemon) => {
+export const PokemonNavigationButtons : React.FC<PokemonDetails> = (pokemon) => {
     return (
         <>
             <div className={styles.actions}>
