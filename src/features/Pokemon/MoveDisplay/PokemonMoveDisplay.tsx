@@ -9,7 +9,7 @@ export const PokemonMoveDisplay : React.FC<PokemonDetails> = (pokemon) => {
             {pokemon && (
                 <div className={styles.scroll}>
                     {pokemon.moves.map((move) => (
-                        <Move key={`${pokemon.name}-${move.name}`} {...move} />
+                        <Move key={`${move.name}`} {...move} />
                     ))}
                 </div>
             )}
