@@ -36,6 +36,7 @@ const transformAbility = (raw: AbilityDetailResponse) => {
 
 const transformMove = (raw: MoveDetailResponse) => {
     const move: MoveDetailResult = {
+        id: raw.id,
         name: raw.name,
         accuracy: raw.accuracy,
         power: raw.power,
@@ -45,6 +46,9 @@ const transformMove = (raw: MoveDetailResponse) => {
         effect_chance: raw.effect_chance ?? 100,
         flavor: raw.flavor_text_entries?.filter((x) => x.language.name === "en").at(0)?.flavor_text ?? "",
         types: [raw.type.name],
+        critrate: raw.meta.crit_rate,
+        drain: raw.meta.drain,
+        healing: raw.meta.healing,
         }
     return move
 }

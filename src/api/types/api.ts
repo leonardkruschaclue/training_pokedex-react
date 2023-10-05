@@ -26,6 +26,7 @@ export type AbilityDetailResponse = {
 }
 
 export type MoveDetailResponse = {
+    id: number
     name: string
     accuracy: number
     power: number
@@ -34,6 +35,7 @@ export type MoveDetailResponse = {
     effect_entries?: Effect[]
     flavor_text_entries?: FlavorText[]
     type: SingleType
+    meta: MoveMeta
 }
 
 
@@ -84,6 +86,12 @@ type Effect = {
     effect: string
     short_effect: string
     language: Language
+}
+
+type MoveMeta = {
+    crit_rate: number
+    drain: number
+    healing: number
 }
 
 type Language = {

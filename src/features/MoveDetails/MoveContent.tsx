@@ -6,16 +6,18 @@ import { MultiPageContent } from "../../components/MultiPageContent/MultiPageCon
 import { MoveFullEffect } from "./MoveFullEffect"
 
 import styles from "../../Style/Content.module.scss"
+import { MoveMetaDisplay } from "./MoveMetaDisplay"
 
 
 export const MoveContent: React.FC<MoveDetailResult> = (move) => {
     //Pages:
     const pages = new Array<React.FC<any>>();
     pages[0] = MoveFullEffect;
+    pages[1] = MoveMetaDisplay;
     
     return (
         <div className={styles.contentbox}>
-                <div className={styles.centercoulum}>
+                <div className={styles.centercolum}>
                     <DetailHeader {...move} />
                     <p>
                         {move.flavor}
@@ -27,7 +29,7 @@ export const MoveContent: React.FC<MoveDetailResult> = (move) => {
                     <StatBar name="Power" value={move.power} maxValue={250} defaultValue={0} />
                     <StatBar name="PP" value={move.pp} maxValue={64} defaultValue={0} />
                 </div>
-                <div className={styles.centercoulum}>
+                <div className={styles.centercolum}>
                     <MultiPageContent arg={move} pages={pages} / >
                 </div>
             </div>

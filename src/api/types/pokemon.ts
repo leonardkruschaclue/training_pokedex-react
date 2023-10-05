@@ -44,6 +44,7 @@ export type AbilityDetailResult = {
 }
 
 export type MoveDetailResult = {
+    id : number
     name: string
     accuracy: number
     power: number
@@ -53,4 +54,7 @@ export type MoveDetailResult = {
     effect_chance: number
     flavor: string
     types: string[]
+    critrate: number
+    drain: number
+    healing: number
 }
