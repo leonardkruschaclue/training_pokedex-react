@@ -38,17 +38,25 @@ const transformMove = (raw: MoveDetailResponse) => {
     const move: MoveDetailResult = {
         id: raw.id,
         name: raw.name,
+        types: [raw.type.name],
         accuracy: raw.accuracy,
         power: raw.power,
         pp: raw.pp,
-        effect_text: raw.effect_entries?.filter((x) => x.language.name === "en").at(0)?.effect ?? "",
-        effect_text_short: raw.effect_entries?.filter((x) => x.language.name === "en").at(0)?.short_effect ?? "",
-        effect_chance: raw.effect_chance ?? 100,
-        flavor: raw.flavor_text_entries?.filter((x) => x.language.name === "en").at(0)?.flavor_text ?? "",
-        types: [raw.type.name],
-        critrate: raw.meta.crit_rate,
-        drain: raw.meta.drain,
-        healing: raw.meta.healing,
+        texts: {
+            effect_text: raw.effect_entries?.filter((x) => x.language.name === "en").at(0)?.effect ?? "",
+            effect_text_short: raw.effect_entries?.filter((x) => x.language.name === "en").at(0)?.short_effect ?? "",
+            effect_chance: raw.effect_chance ?? 100,
+            flavor: raw.flavor_text_entries?.filter((x) => x.language.name === "en").at(0)?.flavor_text ?? "",
+            },
+        meta: {
+            critrate: raw.meta.crit_rate,
+            drain: raw.meta.drain,
+            healing: raw.meta.healing,
+            generation: raw.generation.name,
+            ailment: raw.meta.ailment.name,
+            ailmentChance: raw.meta.ailment_chance,
+            category: raw.meta.category.name,
+            },
         }
     return move
 }

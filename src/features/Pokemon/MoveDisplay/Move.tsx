@@ -12,7 +12,7 @@ export const Move: React.FC<PokemonDetails['moves'][0]> = (move) => {
             <div className={styles.wrapper}>
                 <div className={styles.name}> 
                         {move.name}
-                    <p>{formateEffectChanceString(moveDetails?.effect_text_short , moveDetails?.effect_chance)}</p>
+                    <p>{formateEffectChanceString(moveDetails?.texts.effect_text_short , moveDetails?.texts.effect_chance)}</p>
                 </div>
                 <div>
                     <LinkButton to={`../move/${toQuery(move.name)}`} className={styles.detailsButton}>

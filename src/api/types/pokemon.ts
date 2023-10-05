@@ -43,18 +43,33 @@ export type AbilityDetailResult = {
     flavor: string
 }
 
-export type MoveDetailResult = {
+export type MoveDetailResultBase = {
     id : number
     name: string
+    types: string[]
     accuracy: number
     power: number
     pp: number
+}
+
+export type MoveDetailResultMeta = {
+    critrate: number
+    drain: number
+    healing: number
+    generation: string
+    ailment: string
+    ailmentChance: number
+    category: string
+}
+
+export type MoveDetailResultTexts = {
     effect_text: string
     effect_text_short: string
     effect_chance: number
     flavor: string
-    types: string[]
-    critrate: number
-    drain: number
-    healing: number
 }
+
+export type MoveDetailResult = {
+    texts: MoveDetailResultTexts
+    meta: MoveDetailResultMeta
+} & MoveDetailResultBase
