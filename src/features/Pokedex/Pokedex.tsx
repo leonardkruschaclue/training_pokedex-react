@@ -1,8 +1,8 @@
-import { useState } from 'react'
-import { usePokedexQuery } from '../../api/pokemonApi'
-import { Button } from '../../components/Button'
-import { PokemonItem } from './PokemonItem'
-import styles from './Pokedex.module.scss'
+import { useState } from "react"
+import { usePokedexQuery } from "../../api/pokemonApi"
+import { Button } from "../../components/Button"
+import { PokemonItem } from "./PokemonItem"
+import styles from "./Pokedex.module.scss"
 
 export const Pokedex: React.FC = () => {
     const [queryParams, setQueryParams] = useState<string>("")

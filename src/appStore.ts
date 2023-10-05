@@ -1,6 +1,6 @@
-import { configureStore } from '@reduxjs/toolkit'
-import { useSelector } from 'react-redux'
-import { pokemonApi } from './api/pokemonApi'
+import { configureStore } from "@reduxjs/toolkit"
+import { useSelector } from "react-redux"
+import { pokemonApi } from "./api/pokemonApi"
 
 export const appStore = configureStore({
     reducer: {
