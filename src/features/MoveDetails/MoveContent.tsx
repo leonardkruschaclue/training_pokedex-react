@@ -9,6 +9,10 @@ import styles from "../../Style/Content.module.scss"
 
 
 export const MoveContent: React.FC<MoveDetailResult> = (move) => {
+    //Pages:
+    const pages = new Array<React.FC<any>>();
+    pages[0] = MoveFullEffect;
+    
     return (
         <div className={styles.contentbox}>
                 <div className={styles.centercoulum}>
@@ -24,7 +28,7 @@ export const MoveContent: React.FC<MoveDetailResult> = (move) => {
                     <StatBar name="PP" value={move.pp} maxValue={64} defaultValue={0} />
                 </div>
                 <div className={styles.centercoulum}>
-                    <MultiPageContent arg={move} pages={[MoveFullEffect]} / >
+                    <MultiPageContent arg={move} pages={pages} / >
                 </div>
             </div>
     );

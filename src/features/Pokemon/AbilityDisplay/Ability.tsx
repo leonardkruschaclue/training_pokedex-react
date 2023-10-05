@@ -1,9 +1,9 @@
-import styles from "../../../../Style/Display.module.scss"
+import styles from "../../../Style/Display.module.scss"
 
-import { PokemonDetails } from '../../../../api/types/pokemon'
-import { useAbilityInformationQuery } from '../../../../api/pokemonApi'
-import { LinkButton } from '../../../../components/LinkButton'
-import { toQuery } from '../../../../Utility/Converters'
+import { PokemonDetails } from '../../../api/types/pokemon'
+import { useAbilityInformationQuery } from '../../../api/pokemonApi'
+import { LinkButton } from '../../../components/LinkButton'
+import { toQuery } from '../../../Utility/Converters'
 
 export const Ability: React.FC<PokemonDetails['abilities'][0]> = (ability) => {
     const {data: abilityDetails} = useAbilityInformationQuery(toQuery(ability.name))
