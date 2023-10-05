@@ -1,7 +1,6 @@
 export type PokemonResponseResult = {
-    name: string
-    url: string
-}
+    //EMPTY
+} & Base
 
 export type PokemonListResponse = {
     count: number
@@ -36,6 +35,7 @@ export type MoveDetailResponse = {
     flavor_text_entries?: FlavorText[]
     type: SingleType
     meta: MoveMeta
+    generation: Base
 }
 
 
@@ -45,9 +45,8 @@ type MultipleType = {
 }
 
 type SingleType = {
-    name: string 
-    url: string
-}
+    //EMPTY
+} & Base
 
 type Sprites = {
     other: {
@@ -65,36 +64,37 @@ type Stat = {
 }
 
 type Ability = {
-    ability: { name: string; url: string }
+    ability: Base
     is_hidden: boolean
     slot: number
 }
 
 type Move = {
-    move:{
-        name: string
-        url: string
-    }
+    move: Base
 }
 
 type FlavorText = {
     flavor_text: string
-    language: Language
+    language: Base
 }
 
 type Effect = {
     effect: string
     short_effect: string
-    language: Language
+    language: Base
 }
 
 type MoveMeta = {
     crit_rate: number
     drain: number
     healing: number
+    ailment: Base
+    ailment_chance: number
+    category: Base
 }
 
-type Language = {
+
+type Base = {
         "name": string
         "url": string
 }

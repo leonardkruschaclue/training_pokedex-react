@@ -1,14 +1,14 @@
-import { MoveDetailResult } from "../../api/types/pokemon";
+import { MoveDetailResult, MoveDetailResultTexts } from "../../api/types/pokemon";
 import { formateEffectChanceString } from "../../Utility/Converters";
 
 import styles from "../../Style/Content.module.scss"
 
-export const MoveFullEffect : React.FC<MoveDetailResult> = (move) => {
+export const MoveFullEffect : React.FC<{texts : MoveDetailResultTexts}> = ({texts}) => {
     return (
         <>
             <div className={styles.scroll}>
                 <p>
-                    {formateEffectChanceString(move.effect_text, move.effect_chance)}
+                    {formateEffectChanceString(texts.effect_text, texts.effect_chance)}
                 </p>
             </div>
         </>

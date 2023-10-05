@@ -20,10 +20,10 @@ export const MoveContent: React.FC<MoveDetailResult> = (move) => {
                 <div className={styles.centercolum}>
                     <DetailHeader {...move} />
                     <p>
-                        {move.flavor}
+                        {move.texts.flavor}
                     </p>
                     <p>
-                        Effect: {formateEffectChanceString(move.effect_text_short, move.effect_chance)}
+                        Effect: {formateEffectChanceString(move.texts.effect_text_short, move.texts.effect_chance)}
                     </p>
                     <StatBar name="Accuracy" value={move.accuracy} maxValue={100} defaultValue={100} />
                     <StatBar name="Power" value={move.power} maxValue={250} defaultValue={0} />
