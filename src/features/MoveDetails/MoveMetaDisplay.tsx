@@ -6,7 +6,7 @@ export const MoveMetaDisplay : React.FC<{meta : MoveDetailResultMeta}> = ({meta}
     return (
         <>
             <div>
-                <p style={{textTransform: "capitalize"}}>{meta.generation}</p>
+                <p style={{textTransform: "uppercase"}}>{meta.generation}</p>
                 <p style={{textTransform: "capitalize"}}>Category: {meta.category}</p>
                 <p style={{textTransform: "capitalize"}}>Target: {meta.target}</p>
                 <p style={{textTransform: "capitalize"}}>Ailment: {meta.ailment} {meta.ailmentChance > 0 ? `${meta.ailmentChance}%` : ""}</p>

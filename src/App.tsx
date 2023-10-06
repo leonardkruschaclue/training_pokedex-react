@@ -6,6 +6,7 @@ import { Pokedex } from "./features/Pokedex"
 import { PokemonDetail } from "./features/Pokemon/PokemonDetail"
 import { MoveDetail } from "./features/MoveDetails/MoveDetails"
 import { BASENAME } from "./Constants"
+import { AbilityDetail } from "./features/AbilityDetails/AbilityDetails"
 import styles from "./App.module.scss"
 
 const router = createBrowserRouter(
@@ -21,6 +22,10 @@ const router = createBrowserRouter(
         {
             path: 'move/:moveName',
             element: <MoveDetail />,
+        },
+        {
+            path: 'ability/:abilityName',
+            element: <AbilityDetail />
         },
     ],
     {
