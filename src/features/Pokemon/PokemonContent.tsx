@@ -22,7 +22,7 @@ export function PokemonContent (pokemon : PokemonDetails) {
                     <img src={pokemon.imageSrc} alt={`Displays a picture of ${pokemon.name}`} />
                 </div>
                 <div className={styles.colum}>
-                    <MultiPageContent arg={pokemon} pages={pages} />
+                    {MultiPageContent<PokemonDetails>(pokemon, pages)}
                 </div>
             </div>
         </>
