@@ -1,9 +1,9 @@
-import { MoveDetailResult, MoveDetailResultTexts } from "../../api/types/pokemon";
+import { DetailResultTexts } from "../../api/types/pokemon";
 import { formateEffectChanceString } from "../../Utility/Converters";
 
 import styles from "../../Style/Content.module.scss"
 
-export const MoveFullEffect : React.FC<{texts : MoveDetailResultTexts}> = ({texts}) => {
+export const MoveFullEffect : React.FC<{texts : DetailResultTexts}> = ({texts}) => {
     return (
         <>
             <div className={styles.scroll}>
