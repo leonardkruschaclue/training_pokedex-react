@@ -14,7 +14,7 @@ export const Ability: React.FC<PokemonDetails['abilities'][0]> = (ability) => {
                 <div className={styles.name}>
                     {ability.name} 
                     <p>
-                        {abilityDetails.flavor}
+                        {abilityDetails.texts.flavor}
                     </p>
                 </div>
                 <div>

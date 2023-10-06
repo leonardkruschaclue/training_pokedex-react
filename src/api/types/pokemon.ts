@@ -39,8 +39,11 @@ export type PokedexResult = {
 }
 
 export type AbilityDetailResult = {
+    id: number
     name: string
-    flavor: string
+    generation: string
+    texts: DetailResultTexts
+
 }
 
 export type MoveDetailResultBase = {
@@ -63,7 +66,7 @@ export type MoveDetailResultMeta = {
     target: string
 }
 
-export type MoveDetailResultTexts = {
+export type DetailResultTexts = {
     effect_text: string
     effect_text_short: string
     effect_chance: number
@@ -71,7 +74,7 @@ export type MoveDetailResultTexts = {
 }
 
 export type MoveDetailResult = {
-    texts: MoveDetailResultTexts
+    texts: DetailResultTexts
     meta: MoveDetailResultMeta
     learnedBy: string[]
 } & MoveDetailResultBase

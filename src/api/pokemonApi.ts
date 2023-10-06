@@ -28,8 +28,15 @@ const transformPokemon = (raw: PokemonResponse) => {
 
 const transformAbility = (raw: AbilityDetailResponse) => {
     const ability: AbilityDetailResult = {
+        id: raw.id,
         name: raw.name,
-        flavor: raw.flavor_text_entries[1].flavor_text
+        generation: raw.generation.name,
+        texts: {
+            effect_text: raw.effect_entries?.filter((x) => x.language.name === "en").at(0)?.effect ?? "",
+            effect_text_short: raw.effect_entries?.filter((x) => x.language.name === "en").at(0)?.short_effect ?? "",
+            effect_chance: raw.effect_chance ?? 100,
+            flavor: raw.flavor_text_entries?.filter((x) => x.language.name === "en").at(0)?.flavor_text ?? "",
+            }
         }
     return ability
 }

@@ -4,7 +4,7 @@ export const GeneralHeader : React.FC<{title : string, subtitle : string}> = ({t
     return (
         <>
             <h1 className={styles.header}>{title}</h1>
-            {subtitle && (<p>{subtitle}</p>)}
+            {subtitle && (<p style={{textTransform: "uppercase"}}>{subtitle}</p>)}
         </>
     );
 }

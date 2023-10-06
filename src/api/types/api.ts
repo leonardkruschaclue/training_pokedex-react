@@ -20,7 +20,11 @@ export type PokemonResponse = {
 }
 
 export type AbilityDetailResponse = {
+    id : number
     name: string
+    generation: Base
+    effect_chance: number | null
+    effect_entries?: Effect[]
     flavor_text_entries: FlavorText[]
 }
 
