@@ -34,8 +34,10 @@ export type MoveDetailResponse = {
     effect_entries?: Effect[]
     flavor_text_entries?: FlavorText[]
     type: SingleType
-    meta: MoveMeta
+    meta: MoveMeta | null
     generation: Base
+    learned_by_pokemon: Base[]
+    target: Base
 }
 
 

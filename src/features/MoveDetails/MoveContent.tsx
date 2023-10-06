@@ -7,6 +7,7 @@ import { MoveFullEffect } from "./MoveFullEffect"
 
 import styles from "../../Style/Content.module.scss"
 import { MoveMetaDisplay } from "./MoveMetaDisplay"
+import { MoveKnownBy } from "./MoveKnownBy"
 
 
 export const MoveContent: React.FC<MoveDetailResult> = (move) => {
