@@ -7,11 +7,12 @@ import { MoveFullEffect } from "./MoveFullEffect"
 
 import styles from "../../Style/Content.module.scss"
 import { MoveMetaDisplay } from "./MoveMetaDisplay"
+import { MoveKnownBy } from "./MoveKnownBy"
 
 
 export const MoveContent: React.FC<MoveDetailResult> = (move) => {
     //Pages:
-    const pages = new Array<React.FC<any>>();
+    const pages = new Array<React.FC<MoveDetailResult>>();
     pages[0] = MoveFullEffect;
     pages[1] = MoveMetaDisplay;
     
@@ -30,7 +31,7 @@ export const MoveContent: React.FC<MoveDetailResult> = (move) => {
                     <StatBar name="PP" value={move.pp} maxValue={64} defaultValue={0} />
                 </div>
                 <div className={styles.centercolum}>
-                    <MultiPageContent arg={move} pages={pages} / >
+                    {MultiPageContent<MoveDetailResult>(move, pages)}
                 </div>
             </div>
     );

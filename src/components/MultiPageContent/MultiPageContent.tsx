@@ -4,13 +4,13 @@ import { Button } from "../Button";
 
 import styles from "../../Style/Content.module.scss"
 
-export const MultiPageContent : React.FC<{arg : any, pages : React.FC<any>[]}> = ({arg, pages}) => {
+export function MultiPageContent<T> (arg : T, pages : Array<React.FC<T>>) {
     const [pageNumber , setPage] = useState<number>(0)
     return(
         <>
             <div className={styles.topbar}>
                 {pages.map((x, i) => (
-                    <Button key={`${arg.name}-${i}`} onClick={() => setPage(i)} disabled={i === pageNumber}>
+                    <Button key={`${arg}-${i}`} onClick={() => setPage(i)} disabled={i === pageNumber}>
                         {x.displayName ?? "PSDN"}
                     </Button>
                 ))}

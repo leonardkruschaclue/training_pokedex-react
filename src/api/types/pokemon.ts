@@ -60,6 +60,7 @@ export type MoveDetailResultMeta = {
     ailment: string
     ailmentChance: number
     category: string
+    target: string
 }
 
 export type MoveDetailResultTexts = {
@@ -72,4 +73,5 @@ export type MoveDetailResultTexts = {
 export type MoveDetailResult = {
     texts: MoveDetailResultTexts
     meta: MoveDetailResultMeta
+    learnedBy: string[]
 } & MoveDetailResultBase

@@ -49,14 +49,16 @@ const transformMove = (raw: MoveDetailResponse) => {
             flavor: raw.flavor_text_entries?.filter((x) => x.language.name === "en").at(0)?.flavor_text ?? "",
             },
         meta: {
-            critrate: raw.meta.crit_rate,
-            drain: raw.meta.drain,
-            healing: raw.meta.healing,
             generation: raw.generation.name,
-            ailment: raw.meta.ailment.name,
-            ailmentChance: raw.meta.ailment_chance,
-            category: raw.meta.category.name,
+            critrate: raw.meta?.crit_rate ?? 0,
+            drain: raw.meta?.drain ?? 0,
+            healing: raw.meta?.healing ?? 0,
+            ailment: raw.meta?.ailment.name ?? "",
+            ailmentChance: raw.meta?.ailment_chance ?? 0,
+            category: raw.meta?.category.name ?? "",
+            target: raw.target.name,
             },
+        learnedBy: raw.learned_by_pokemon.map((x) => x.name)
         }
     return move
 }
