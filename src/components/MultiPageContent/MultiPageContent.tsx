@@ -1,8 +1,8 @@
-import React, { Dispatch, SetStateAction, useState } from "react";
+import styles from "../../Style/Content.module.scss"
 
+import { useState } from "react";
 import { Button } from "../Button";
 
-import styles from "../../Style/Content.module.scss"
 
 export function MultiPageContent<T> (pages : Array<any>, arg : T) {
     const [pageNumber , setPage] = useState<number>(0)

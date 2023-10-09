@@ -1,4 +1,4 @@
-import { MoveDetailResult, MoveDetailResultMeta } from "../../api/types/pokemon";
+import { MoveDetailResultMeta } from "../../api/types/pokemon";
 import { StatBar } from "../../components/StatBar/StatBar";
 
 

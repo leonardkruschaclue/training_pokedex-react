@@ -1,6 +1,6 @@
+import styles from "../Header.module.scss"
 
 import { Type } from "./Type"
-import styles from "../Header.module.scss"
 
 export const DetailHeader : React.FC<{name :string, types: string[]}> = ({name, types}) => {
     return (

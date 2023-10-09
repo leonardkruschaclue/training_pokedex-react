@@ -1,6 +1,6 @@
+import styles from "./NavigationButtons.module.scss"
 
 import { LinkButton } from "../LinkButton";
-import styles from "./NavigationButtons.module.scss"
 
 export const NavigationButtons : React.FC<{id : number, baseurl : string, suburl : string}> = ({id, baseurl, suburl}) => {
     return (

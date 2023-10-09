@@ -1,7 +1,7 @@
+import styles from "../../Style/Content.module.scss"
+
 import { DetailResultTexts } from "../../api/types/pokemon";
 import { formateEffectChanceString } from "../../Utility/Converters";
-
-import styles from "../../Style/Content.module.scss"
 
 export function MoveFullEffect ({texts} : {texts: DetailResultTexts}) {
     return (

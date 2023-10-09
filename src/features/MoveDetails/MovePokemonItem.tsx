@@ -1,8 +1,8 @@
+import styles from "../../Style/Display.module.scss"
+
 import { toQuery } from "../../Utility/Converters";
 import { usePokemonQuery } from "../../api/pokemonApi";
 import { LinkButton } from "../../components/LinkButton";
-
-import styles from "../../Style/Display.module.scss"
 import { Type } from "../Headers/DetailHeader/Type";
 
 export const MovePokemonItem : React.FC<{name : string}> = ({name}) => {

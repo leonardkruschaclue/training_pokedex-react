@@ -1,6 +1,7 @@
+import styles from "./PokemonItem.module.scss"
+
 import { Link } from "react-router-dom"
 import { BasePokemon } from "../../api/types/pokemon"
-import styles from "./PokemonItem.module.scss"
 
 export const PokemonItem: React.FC<BasePokemon> = ({id, imageSrc, name, types}) => {
     return (

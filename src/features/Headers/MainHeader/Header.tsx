@@ -1,5 +1,6 @@
-import { BASENAME } from "../../../Constants";
 import styles from "./Header.module.scss";
+
+import { BASENAME } from "../../../Constants";
 
 export const Header: React.FC = () => {
     return(

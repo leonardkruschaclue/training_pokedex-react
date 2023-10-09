@@ -1,7 +1,7 @@
+import styles from "../../Style/Content.module.scss"
+
 import { MoveDetailResult } from "../../api/types/pokemon";
 import { MovePokemonItem } from "./MovePokemonItem";
-
-import styles from "../../Style/Content.module.scss"
 
 export const MoveKnownBy : React.FC<MoveDetailResult> = (move) => {
     return (

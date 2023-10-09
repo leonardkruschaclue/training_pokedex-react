@@ -1,5 +1,5 @@
-import { MouseEventHandler } from 'react'
-import styles from './Button.module.scss'
+import styles from "./Button.module.scss"
+import { MouseEventHandler } from "react"
 
 export type ButtonProps = {
     onClick?: MouseEventHandler

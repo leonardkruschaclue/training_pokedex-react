@@ -1,8 +1,7 @@
-import { AbilityDetailResult } from "../../api/types/pokemon"
-import { DetailHeader } from "../Headers/DetailHeader/DetailHeader"
-import { formateEffectChanceString } from "../../Utility/Converters"
-
 import styles from "../../Style/Content.module.scss"
+
+import { AbilityDetailResult } from "../../api/types/pokemon"
+import { formateEffectChanceString } from "../../Utility/Converters"
 import { GeneralHeader } from "../Headers/GeneralHeader/GeneralHeader"
 
 

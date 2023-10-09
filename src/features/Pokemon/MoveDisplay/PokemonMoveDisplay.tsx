@@ -1,8 +1,9 @@
-import { Move } from "./Move";
-
 import styles from "../../../Style/Content.module.scss"
+
+import { Move } from "./Move";
 import { Dispatch, SetStateAction } from "react";
-import { PokemonDetails, PokemonMove } from "../../../api/types/pokemon";
+import { PokemonMove } from "../../../api/types/pokemon";
+
 
 export function PokemonMoveDisplay ({moves} : PokemonMove, search : string, setSearch : Dispatch<SetStateAction<string>>) {
     return (

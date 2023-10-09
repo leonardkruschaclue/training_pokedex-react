@@ -1,8 +1,8 @@
+import styles from "../../Style/DetailPage.module.scss"
+
 import { useParams } from "react-router"
 import { useMoveInformationQuery } from "../../api/pokemonApi"
 import { MoveContent } from "./MoveContent"
-
-import styles from "../../Style/DetailPage.module.scss"
 import { NavigationButtons } from "../../components/NavigationButtons/NavigationButtons"
 
 export const MoveDetail: React.FC = () => {

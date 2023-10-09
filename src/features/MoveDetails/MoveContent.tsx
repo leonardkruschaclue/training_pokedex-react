@@ -1,13 +1,13 @@
+import styles from "../../Style/Content.module.scss"
+
 import { MoveDetailResult } from "../../api/types/pokemon"
 import { DetailHeader } from "../Headers/DetailHeader/DetailHeader"
 import { formateEffectChanceString } from "../../Utility/Converters"
 import { StatBar } from "../../components/StatBar/StatBar"
 import { MultiPageContent } from "../../components/MultiPageContent/MultiPageContent"
 import { MoveFullEffect } from "./MoveFullEffect"
-
-import styles from "../../Style/Content.module.scss"
 import { MoveMetaDisplay } from "./MoveMetaDisplay"
-import { MoveKnownBy } from "./MoveKnownBy"
+
 
 
 export const MoveContent: React.FC<MoveDetailResult> = (move) => {

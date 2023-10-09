@@ -1,7 +1,8 @@
+import { QUERYBASEURL } from '../Constants'
+
 import { createApi, fetchBaseQuery, FetchBaseQueryError } from '@reduxjs/toolkit/query/react'
 import { AbilityDetailResponse, MoveDetailResponse, PokemonListResponse, PokemonResponse } from './types/api'
-import { PokedexResult, PokemonStats, PokemonAbility, AbilityDetailResult, PokemonMove, PokemonDetails, MoveDetailResult } from './types/pokemon'
-import { QUERYBASEURL } from '../Constants'
+import { PokedexResult, AbilityDetailResult, PokemonDetails, MoveDetailResult } from './types/pokemon'
 
 const transformPokemon = (raw: PokemonResponse) => {
     const pokemon: PokemonDetails = {

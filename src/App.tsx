@@ -1,3 +1,7 @@
+import styles from "./App.module.scss"
+
+import { BASENAME } from "./Constants"
+
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import { useAppSelector } from "./appStore"
 import { LoadingSpinner } from "./components/LoadingSpinner"
@@ -5,9 +9,7 @@ import { Header } from "./features/Headers/MainHeader"
 import { Pokedex } from "./features/Pokedex"
 import { PokemonDetail } from "./features/Pokemon/PokemonDetail"
 import { MoveDetail } from "./features/MoveDetails/MoveDetails"
-import { BASENAME } from "./Constants"
 import { AbilityDetail } from "./features/AbilityDetails/AbilityDetails"
-import styles from "./App.module.scss"
 
 const router = createBrowserRouter(
     [
