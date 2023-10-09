@@ -9,7 +9,7 @@ import styles from "../../Style/Content.module.scss"
 
 export function PokemonContent (pokemon : PokemonDetails) {
     //Pages
-    const pages = new Array<React.FC<any>>();
+    const pages = new Array();
     pages[0] = PokemonStatDisplay;
     pages[1] = PokemonAbilityDisplay;
     pages[2] = PokemonMoveDisplay;
@@ -22,7 +22,7 @@ export function PokemonContent (pokemon : PokemonDetails) {
                     <img src={pokemon.imageSrc} alt={`Displays a picture of ${pokemon.name}`} />
                 </div>
                 <div className={styles.colum}>
-                    {MultiPageContent<PokemonDetails>(pokemon, pages)}
+                    {MultiPageContent<PokemonDetails>(pages, pokemon)}
                 </div>
             </div>
         </>

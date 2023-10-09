@@ -2,7 +2,7 @@ import { Ability } from "./Ability"
 import { PokemonDetails } from "../../../api/types/pokemon"
 
 
-export const PokemonAbilityDisplay: React.FC<PokemonDetails> = (pokemon) => {
+export function PokemonAbilityDisplay (pokemon : PokemonDetails) {
     return (
         <>
             {pokemon &&(

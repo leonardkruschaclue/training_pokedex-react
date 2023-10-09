@@ -12,7 +12,7 @@ import { MoveKnownBy } from "./MoveKnownBy"
 
 export const MoveContent: React.FC<MoveDetailResult> = (move) => {
     //Pages:
-    const pages = new Array<React.FC<MoveDetailResult>>();
+    const pages = new Array<any>();
     pages[0] = MoveFullEffect;
     pages[1] = MoveMetaDisplay;
     
@@ -31,7 +31,7 @@ export const MoveContent: React.FC<MoveDetailResult> = (move) => {
                     <StatBar name="PP" value={move.pp} maxValue={64} defaultValue={0} />
                 </div>
                 <div className={styles.centercolum}>
-                    {MultiPageContent<MoveDetailResult>(move, pages)}
+                    {MultiPageContent<MoveDetailResult>(pages, move)}
                 </div>
             </div>
     );

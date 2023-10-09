@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { Dispatch, SetStateAction, useState } from "react";
 
 import { Button } from "../Button";
 
 import styles from "../../Style/Content.module.scss"
 
-export function MultiPageContent<T> (arg : T, pages : Array<React.FC<T>>) {
+export function MultiPageContent<T> (pages : Array<any>, arg : T) {
     const [pageNumber , setPage] = useState<number>(0)
+    const [search, setSearch] = useState<string>("");
     return(
         <>
             <div className={styles.topbar}>
@@ -15,7 +16,7 @@ export function MultiPageContent<T> (arg : T, pages : Array<React.FC<T>>) {
                     </Button>
                 ))}
             </div>
-            {pages[pageNumber]({...arg})}
+            {pages[pageNumber](arg, search, setSearch)}
         </>
     )
 }

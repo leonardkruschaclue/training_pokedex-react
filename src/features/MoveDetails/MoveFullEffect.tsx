@@ -3,7 +3,7 @@ import { formateEffectChanceString } from "../../Utility/Converters";
 
 import styles from "../../Style/Content.module.scss"
 
-export const MoveFullEffect : React.FC<{texts : DetailResultTexts}> = ({texts}) => {
+export function MoveFullEffect ({texts} : {texts: DetailResultTexts}) {
     return (
         <>
             <div className={styles.scroll}>

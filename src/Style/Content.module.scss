@@ -16,8 +16,7 @@
 }
 
 .scroll {
-    display: list-item;
-    max-height: 475px;
+    max-height: 450px;
     overflow-x: hidden;
     padding-right: 10px;
     text-align: left;
@@ -48,6 +47,19 @@
     // p {
     //     width: 400px;
     // }
+}
+
+.displaywrapper {
+    display: grid;
+    max-height: 475px;
+    input {
+        height: 15px;
+        justify-self: center;
+        border: 1px solid goldenrod;
+        border-radius: 5px;
+        background-color: var(--main-background);
+        color: var(--color)
+    }
 }
 
 .actions {

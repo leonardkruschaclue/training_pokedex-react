@@ -2,7 +2,7 @@ import { PokemonDetails } from "../../../api/types/pokemon";
 import { PokemonStat} from "./PokemonStat";
 
 
-export const PokemonStatDisplay : React.FC<PokemonDetails> = (pokemon) => {
+export function PokemonStatDisplay (pokemon : PokemonDetails) {
     return (
         <>
             <div>
