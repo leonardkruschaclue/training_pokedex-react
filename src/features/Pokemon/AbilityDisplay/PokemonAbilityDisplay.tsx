@@ -7,8 +7,8 @@ export function PokemonAbilityDisplay (pokemon : PokemonDetails) {
         <>
             {pokemon &&(
                 <div>
-                    {pokemon.abilities.map((ability) => (
-                        <Ability key={`${pokemon.name}-${ability.name}`} {...ability} />
+                    {pokemon.abilities.map((ability, i) => (
+                        <Ability key={`${pokemon.name}-${ability.name}-${i}`} {...ability} />
                     ))}
                 </div>
             )}
