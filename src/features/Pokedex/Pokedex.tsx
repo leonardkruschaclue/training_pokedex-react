@@ -25,7 +25,7 @@ export const Pokedex: React.FC = () => {
                 <Button disabled={!data.previous} onClick={() => setQueryParams(data.previous!)}>
                     Previous
                 </Button>
-                <input placeholder="Page" onKeyDown={(e) => {
+                <input id="pageSelector" placeholder="Page" onKeyDown={(e) => {
                     if(e.key === 'Enter') {
                         let value = Number.parseInt(e.currentTarget.value);
                         if (value > 0) {
