@@ -7,7 +7,7 @@ import { PokemonItem } from "./PokemonItem"
 import { QUERYCOUNT } from "../../Constants"
 
 export const Pokedex: React.FC = () => {
-    const [queryParams, setQueryParams] = useState<string>("")
+    const [queryParams, setQueryParams] = useState<string>(`?limit=${QUERYCOUNT}`)
     const { data } = usePokedexQuery(queryParams)
 
     if (!data) {
