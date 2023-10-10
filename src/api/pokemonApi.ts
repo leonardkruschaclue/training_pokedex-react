@@ -92,6 +92,7 @@ export const pokemonApi = createApi({
                 { error: result.find((x) => x.error) as FetchBaseQueryError }
                 : {
                     data:{
+                        count: pokedexResult.count,
                         pokedex: result.map((x) => transformPokemon(x.data as PokemonResponse)),
                         next: splitQuery(pokedexResult.next),
                         previous: splitQuery(pokedexResult.previous),

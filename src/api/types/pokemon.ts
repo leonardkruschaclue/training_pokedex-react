@@ -33,6 +33,7 @@ export type PokemonMove = {
 }
 
 export type PokedexResult = {
+    count: number
     pokedex: BasePokemon[]
     next?: string
     previous?: string

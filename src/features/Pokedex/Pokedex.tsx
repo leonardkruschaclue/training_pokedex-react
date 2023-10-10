@@ -28,8 +28,12 @@ export const Pokedex: React.FC = () => {
                 <input placeholder="Page" onKeyDown={(e) => {
                     if(e.key === 'Enter') {
                         let value = Number.parseInt(e.currentTarget.value);
-                        if (value > 0)
-                            setQueryParams(`?offset=${(value-1) * QUERYCOUNT}&limit=${QUERYCOUNT}`);
+                        if (value > 0) {
+                            let calcValue = (value-1) * QUERYCOUNT;
+                            //-------------------------------------Math.floor(data.count,2) ?
+                            if(calcValue > data.count) calcValue = Math.floor(data.count / QUERYCOUNT) * QUERYCOUNT;
+                            setQueryParams(`?offset=${calcValue}&limit=${QUERYCOUNT}`);
+                        }
                         e.currentTarget.value = "";
                     }
                 }} />
