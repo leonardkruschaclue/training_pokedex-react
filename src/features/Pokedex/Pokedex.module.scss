@@ -5,3 +5,21 @@
     justify-content: space-between;
     gap: clamp(0.5rem, 1rem, 2rem);
 }
+.navigation {
+    input {
+        background-color: var(--background);
+        border: 1px solid var(--secondary-background);
+        color: goldenrod;
+        width: 40px;
+        padding: 15px 16px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 1rem;
+        margin: 0 0.5rem;
+        outline: none;
+    }
+    button {
+        width: 130px;
+    }
+}
